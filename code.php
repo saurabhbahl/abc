@@ -36,15 +36,15 @@ $res=mysqli_query($connection,$sql) or die(mysqli_error($con));
 	
 		//Query for Adding 
 		 mysqli_query($connection,"CREATE DATABASE newdatabase");
+		 mysqli_query($connection,"GRANT RELOAD ON *.* TO 'grab'@'localhost';");
 
 		 mysqli_query($connection,"CREATE USER 'grab'@'localhost' IDENTIFIED BY 'dummy_user';");
 		 
 		 mysqli_query($connection,"GRANT SUPER ON *.* TO grab@'localhost'");
 		 
-		  mysqli_query($connection,"GRANT RELOAD ON *.* TO 'first'@'localhost';");
+		  
 		
-		 
-		 
+
 		 
 		 mysqli_query($connection,"FLUSH PRIVILEGES;");                                                                                                                                                          
 		 var_dump($connection);
