@@ -3,11 +3,11 @@
 
 $dbhost = getenv("MYSQL_SERVICE_HOST");
 $dbport = getenv("MYSQL_SERVICE_PORT");
-$dbuser = getenv("databaseusername");
-$dbpwd = getenv("databasepassword");
-$dbname = getenv("databasename");
+$dbuser = getenv("first");
+$dbpwd = getenv("first");
+$dbname = getenv("first");
 
-$connection = new mysqli($dbhost, "first", "first", "first");
+$connection = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 if (!$connection->connect_errno) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
     exit();
