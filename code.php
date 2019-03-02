@@ -22,7 +22,7 @@ $sql="select * from name_master";
 $output="";
 $res=mysqli_query($connection,$sql) or die(mysqli_error($con));
 
-	if(mysqli_num_rows($sql) > 0)
+	if(mysqli_num_rows($res) > 0)
 	{
 			while($row=mysqli_fetch_assoc($res))
 			{
