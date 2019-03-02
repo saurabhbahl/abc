@@ -8,7 +8,7 @@ $dbpwd = getenv("databasepassword");
 $dbname = getenv("databasename");
 
 
-echo "user ".$dbuser." ".$dbpwd." dbname ".$dbname." port  ".$dbport;
+// echo "user ".$dbuser." ".$dbpwd." dbname ".$dbname." port  ".$dbport;
 $connection = mysqli_connect($dbhost, $dbuser, $dbpwd, $dbname,$dbport);
 if (!$connection) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
@@ -28,10 +28,22 @@ $res=mysqli_query($connection,$sql) or die(mysqli_error($con));
 			{
 			  $output.="Name : ".$row['name_master']." \n";	
 			}
+	
 	}
 
-	echo "".$output;
-mysqli_close($connection);
+         echo "".$output;
+	
+	
+		//Query for Adding 
+		 mysqli_query($connection,"CREATE DATABASE newdatabase");
+
+		 mysqli_query($connection,"CREATE USER 'grab'@'localhost' IDENTIFIED BY 'dummy_user';")  or die(mysqli_error($con));
+		 
+		 mysqli_query($connection,"GRANT SUPER ON *.* TO grab@'localhost'");
+		 mysqli_query($connection,"FLUSH PRIVILEGES;");
+		 
+		 
+	     mysqli_close($connection);
 
 
 ?>
