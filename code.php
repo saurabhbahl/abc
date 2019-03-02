@@ -7,6 +7,8 @@ $dbuser = getenv("first");
 $dbpwd = getenv("first");
 $dbname = getenv("first");
 
+
+echo "user ".$dbuser." ".$dbpwd." dbname ".$dbname;
 $connection = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 if (!$connection->connect_errno) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
