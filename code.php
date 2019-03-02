@@ -16,7 +16,7 @@ if (!$connection) {
 } else {
     printf("Connected to the database");
 }
-mysqli_close();
+mysqli_close($connection);
 
 ?>
        
