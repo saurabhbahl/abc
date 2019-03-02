@@ -26,7 +26,7 @@ $res=mysqli_query($connection,$sql) or die(mysqli_error($con));
 	{
 			while($row=mysqli_fetch_assoc($res))
 			{
-			  $output.="Name : ".$row['name']." \n";	
+			  $output.="Name : ".$row['name_master']." \n";	
 			}
 	}
 
