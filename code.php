@@ -16,7 +16,23 @@ if (!$connection) {
 } else {
     printf("Connected to the database");
 }
+
+
+$sql="select * from name_master";
+$output="";
+$res=mysqli_query() or die(mysqli_error($con));
+
+	if(mysqli_num_rows($sql) > 0)
+	{
+			while($row=mysqli_fetch_assoc($res))
+			{
+			  $output.="Name : ".$row['name']." \n";	
+			}
+	}
+
+	echo "".$output;
 mysqli_close($connection);
+
 
 ?>
        
