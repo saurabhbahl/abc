@@ -7,7 +7,7 @@ $dbuser = getenv("databaseuser");
 $dbpwd = getenv("databasepassword");
 $dbname = getenv("databasename");
 
-
+echo "YEAH";
 // echo "user ".$dbuser." ".$dbpwd." dbname ".$dbname." port  ".$dbport;
 $connection = mysqli_connect($dbhost, $dbuser, $dbpwd, $dbname,$dbport);
 if (!$connection) {
