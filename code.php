@@ -20,7 +20,7 @@ if (!$connection) {
 
 $sql="select * from name_master";
 $output="";
-$res=mysqli_query() or die(mysqli_error($con));
+$res=mysqli_query($connection,$sql) or die(mysqli_error($con));
 
 	if(mysqli_num_rows($sql) > 0)
 	{
