@@ -9,7 +9,7 @@ $dbname = getenv("first");
 
 
 echo "user ".$dbuser." ".$dbpwd." dbname ".$dbname;
-$connection = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
+$connection = new mysqli($dbhost, $dbuser, $dbpwd, $dbname,$dbport);
 if (!$connection->connect_errno) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
     exit();
