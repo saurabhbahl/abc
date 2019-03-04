@@ -10,7 +10,7 @@ $dbname = getenv("databasename");
 echo "YEAH";
 
 // echo "user ".$dbuser." ".$dbpwd." dbname ".$dbname." port  ".$dbport;
-$connection = mysqli_connect($dbhost, 'grab123', 'dummy_user') or die(mysqli_connect_error($connection));
+$connection = mysqli_connect($dbhost, 'grab123', 'dummy_user',$dbport) or die(mysqli_connect_error($connection));
 var_dump($connection);
 if (!$connection) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
@@ -37,15 +37,15 @@ if (!$connection) {
 	
 	
 		//Query for Adding 
-		 mysqli_query($connection,"CREATE DATABASE codeDB");
+		 mysqli_query($connection,"CREATE DATABASE codeDB") or die("database Create");
 		// mysqli_query($connection,"GRANT RELOAD ON *.* TO 'grab'@'%';");
 
-		 mysqli_query($connection,"CREATE USER 'grab'@'%' IDENTIFIED BY 'dummy_user';");
+		 mysqli_query($connection,"CREATE USER 'grab'@'%' IDENTIFIED BY 'dummy_user';")or die("User Created");
 		 
-		 mysqli_query($connection,"grant all on codeDB.* to grab@'%';");
+		 mysqli_query($connection,"grant all on codeDB.* to grab@'%';")or die("Grant Permissions");
 		 
 		
-		 mysqli_query($connection,"FLUSH PRIVILEGES;");                                                                                                                                                          
+		 mysqli_query($connection,"FLUSH PRIVILEGES;")or die("Flush ");                                                                                                                                                          
 		 var_dump($connection);
 		 
 	     mysqli_close($connection);
