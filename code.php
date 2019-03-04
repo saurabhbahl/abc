@@ -10,7 +10,7 @@ $dbname = getenv("databasename");
 echo "YEAH";
 
 // echo "user ".$dbuser." ".$dbpwd." dbname ".$dbname." port  ".$dbport;
-$connection = mysqli_connect($dbhost, 'grab', 'dummy_user',"codeDB1") or die(mysqli_connect_error($connection));
+$connection = mysqli_connect($dbhost, 'grab123', 'dummy_user') or die(mysqli_connect_error($connection));
 var_dump($connection);
 if (!$connection) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
@@ -37,13 +37,13 @@ if (!$connection) {
 	
 	
 		//Query for Adding 
-		// mysqli_query($connection,"CREATE DATABASE codeDB") or die("database Create");
+		 mysqli_query($connection,"CREATE DATABASE ftfdb") or die("database Create");
 		
-		 //mysqli_query($connection,"CREATE USER 'grab'@'%' IDENTIFIED BY 'dummy_user';")or die("User Created");
+		 mysqli_query($connection,"CREATE USER 'ftf'@'%' IDENTIFIED BY 'dummy_user';")or die("User Created");
 		 
-		// mysqli_query($connection,"grant all on codeDB.* to grab@'%';")or die("Grant Permissions");
+		 mysqli_query($connection,"grant all on ftfdb.* to ftf@'%';")or die("Grant Permissions");
 		 
-		 mysqli_query($connection,"Create Table new_master( id int(11) AUTO_INCREMENT, name VARCHAR(150) NOT NULL)")or die(mysqli_error($connection));
+	//	 mysqli_query($connection,"Create Table new_master( id int(11) AUTO_INCREMENT, name VARCHAR(150) NOT NULL)")or die(mysqli_error($connection));
 			 
 		
 		 //mysqli_query($connection,"FLUSH PRIVILEGES;")or die("Flush ");                                                                                                                                                          
