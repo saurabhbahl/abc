@@ -8,6 +8,7 @@ $dbpwd = getenv("databasepassword");
 $dbname = getenv("databasename");
 
 echo "YEAH";
+
 // echo "user ".$dbuser." ".$dbpwd." dbname ".$dbname." port  ".$dbport;
 $connection = mysqli_connect("localhost", 'grab123', 'dummy_user');
 var_dump($connection);
