@@ -18,20 +18,20 @@ if (!$connection) {
 }
 
 
-$sql="select * from name_master";
-$output="";
-$res=mysqli_query($connection,$sql) or die(mysqli_error($con));
+// $sql="select * from name_master";
+// $output="";
+// $res=mysqli_query($connection,$sql) or die(mysqli_error($con));
 
-	if(mysqli_num_rows($res) > 0)
-	{
-			while($row=mysqli_fetch_assoc($res))
-			{
-			  $output.="Name : ".$row['name_master']." \n";	
-			}
+	// if(mysqli_num_rows($res) > 0)
+	// {
+			// while($row=mysqli_fetch_assoc($res))
+			// {
+			  // $output.="Name : ".$row['name_master']." \n";	
+			// }
 	
-	}
+	// }
 
-         echo "".$output;
+         // echo "".$output;
 	
 	
 		//Query for Adding 
