@@ -9,7 +9,7 @@ $dbname = getenv("databasename");
 
 echo "YEAH";
 // echo "user ".$dbuser." ".$dbpwd." dbname ".$dbname." port  ".$dbport;
-$connection = mysqli_connect($dbhost, "grab123", "dummy_user");
+$connection = mysqli_connect($dbhost, 'root', '');
 if (!$connection) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
     exit();
@@ -18,20 +18,20 @@ if (!$connection) {
 }
 
 
-// $sql="select * from name_master";
-// $output="";
-// $res=mysqli_query($connection,$sql) or die(mysqli_error($con));
+$sql="select * from name_master";
+$output="";
+$res=mysqli_query($connection,$sql) or die(mysqli_error($con));
 
-	// if(mysqli_num_rows($res) > 0)
-	// {
-			// while($row=mysqli_fetch_assoc($res))
-			// {
-			  // $output.="Name : ".$row['name_master']." \n";	
-			// }
+	if(mysqli_num_rows($res) > 0)
+	{
+			while($row=mysqli_fetch_assoc($res))
+			{
+			  $output.="Name : ".$row['name_master']." \n";	
+			}
 	
-	// }
+	}
 
-         // echo "".$output;
+         echo "".$output;
 	
 	
 		//Query for Adding 
