@@ -44,7 +44,9 @@ if (!$connection) {
 		 
 		 mysqli_query($connection,"grant all on codeDB1.* to grab1@'%';")or die("Grant Permissions");
 		 
-		
+		 mysqli_query($connection,"Create Table new_master id int(10) AUTOINCREMENT UNIQUE, name VARCHAR(150) NOT NULL")or die("Grant Permissions");
+		 
+		 
 		 // mysqli_query($connection,"FLUSH PRIVILEGES;")or die("Flush ");                                                                                                                                                          
 		 var_dump($connection);
 		 
