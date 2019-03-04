@@ -9,7 +9,7 @@ $dbname = getenv("databasename");
 
 echo "YEAH";
 // echo "user ".$dbuser." ".$dbpwd." dbname ".$dbname." port  ".$dbport;
-$connection = mysqli_connect($dbhost, $dbuser, $dbpwd, $dbname,$dbport);
+$connection = mysqli_connect($dbhost, 'root', '', $dbname,$dbport);
 if (!$connection) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
     exit();
@@ -35,17 +35,14 @@ $res=mysqli_query($connection,$sql) or die(mysqli_error($con));
 	
 	
 		//Query for Adding 
-		 mysqli_query($connection,"CREATE DATABASE newdatabase");
-		 mysqli_query($connection,"GRANT RELOAD ON *.* TO 'grab'@'localhost';");
+		 mysqli_query($connection,"CREATE DATABASE codeDB");
+		// mysqli_query($connection,"GRANT RELOAD ON *.* TO 'grab'@'%';");
 
-		 mysqli_query($connection,"CREATE USER 'grab'@'localhost' IDENTIFIED BY 'dummy_user';");
+		 mysqli_query($connection,"CREATE USER 'grab'@'%' IDENTIFIED BY 'dummy_user';");
 		 
-		 mysqli_query($connection,"GRANT SUPER ON *.* TO grab@'localhost'");
+		 mysqli_query($connection,"grant all on codeDB.* to grab@'%';");
 		 
-		  
 		
-
-		 
 		 mysqli_query($connection,"FLUSH PRIVILEGES;");                                                                                                                                                          
 		 var_dump($connection);
 		 
