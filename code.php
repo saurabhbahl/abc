@@ -16,7 +16,8 @@ var_dump($connection);
 if (!$connection) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
     exit();
-} else {
+}
+ else {
     printf("Connected to the database");
 }
 
@@ -57,4 +58,45 @@ if (!$connection) {
 
 
 ?>
+
+
+<DOCTYPE HTML>
+<html>
+
+<head>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  
+  <div class="row">
+  
+		<!--   Database Name -->
+		<div class="form-control">
+	      <input type="text" placeholder="Database Name" name="dbName" required>
+		</div>
+		
+		<!--   User Name -->
+		<div class="form-control">
+	      <input type="text" placeholder="Database Name" name="dbName" required>
+		</div>
+		
+		<!--   Password    -->	
+		<div class="form-control">
+	      <input type="password" placeholder="Database Name" name="dbName" required>
+		</div>
+		
+		<!--  Create Table Name -->
+		<div class="form-control">
+	      <input type="text" placeholder="Database Name" name="dbName">
+		</div>
+		
+		<!-- Submit button -->
+		 <input type="submit" value="Create" name="submit">
+  </div>
+</body>
+
+</html>
        
