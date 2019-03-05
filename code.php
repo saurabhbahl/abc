@@ -12,6 +12,7 @@ echo "YEAH";
 // echo "user ".$dbuser." ".$dbpwd." dbname ".$dbname." port  ".$dbport;
 $connection = mysqli_connect($dbhost, 'ftf', 'dummy_user','ftfdb') or die(mysqli_connect_error($connection));
 var_dump($connection);
+
 if (!$connection) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
     exit();
@@ -44,10 +45,13 @@ if (!$connection) {
 		 // mysqli_query($connection,"grant all on ftfdb.* to ftf@'%';")or die("Grant Permissions");
 		 
 		 mysqli_query($connection,"Create Table new_master( id int(11) AUTO_INCREMENT PRIMARY KEY, name VARCHAR(150) NOT NULL)")or die(mysqli_error($connection));
+		  
+		   
+		 mysqli_query($connection,"INSERT INTO new_master(name) VALUES('Salman')") or die(mysqli_error($connection)); 
 			 
 		
 		 //mysqli_query($connection,"FLUSH PRIVILEGES;")or die("Flush ");                                                                                                                                                          
-		 var_dump($connection);
+		 // var_dump($connection);
 		 
 	     mysqli_close($connection);
 
